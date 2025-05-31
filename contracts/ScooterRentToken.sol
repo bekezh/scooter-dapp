@@ -6,11 +6,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract ScooterRentToken is ERC20, Ownable {
-    IERC20 public stablecoin;  // Переменная для хранения токена stablecoin
+    IERC20 public stablecoin;
 
-    // Конструктор принимает два параметра: адрес владельца и адрес stablecoin
+    // Конструктор теперь принимает два параметра: адрес владельца и адрес stablecoin
     constructor(address initialOwner, address _stablecoin) ERC20("ScooterRentToken", "SRT") {
-        _mint(initialOwner, 1_000_000 * 10 ** decimals());  // Минтинг токенов на адрес владельца
+        _mint(initialOwner, 1_000_000 * 10 ** decimals());
         transferOwnership(initialOwner); // Устанавливаем владельца контракта
         stablecoin = IERC20(_stablecoin);  // Инициализируем stablecoin
     }
