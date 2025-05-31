@@ -9,7 +9,7 @@ contract ScooterRentToken is ERC20, Ownable {
     IERC20 public stablecoin;
 
     // Конструктор теперь принимает два параметра: адрес владельца и адрес stablecoin
-    constructor(address initialOwner, address _stablecoin) ERC20("ScooterRentToken", "SRT") {
+    constructor(address initialOwner, address _stablecoin) ERC20("ScooterRentToken", "SRT") Ownable() {
         _mint(initialOwner, 1_000_000 * 10 ** decimals());
         transferOwnership(initialOwner); // Устанавливаем владельца контракта
         stablecoin = IERC20(_stablecoin);  // Инициализируем stablecoin
