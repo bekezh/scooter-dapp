@@ -42,3 +42,7 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           INFURA_KEY: ${{ secrets.INFURA_KEY }}
 
+<<<<<<< HEAD
+=======
+          
+>>>>>>> dff1ecdb (Trigger deploy workflow)
