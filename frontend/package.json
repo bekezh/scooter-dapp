@@ -12,5 +12,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.5.0"
   }
 }
