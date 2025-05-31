@@ -1,0 +1,22 @@
+name: Deploy Smart Contract
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+        working-directory: ./contracts
+      - run: npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox dotenv
+      - run: npx hardhat run scripts/deploy.js --network mumbai
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          INFURA_KEY: ${{ secrets.INFURA_KEY }}
