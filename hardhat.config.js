@@ -1,12 +1,12 @@
+require("@nomiclabs/hardhat-ethers");
 require("dotenv").config();
-require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
   solidity: "0.8.20",
   networks: {
-    goerli: {
-      url: `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`,
-      accounts: [process.env.PRIVATE_KEY]
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/${process.env.INFURA_KEY}`,  // Используем URL для Sepolia
+      accounts: [process.env.PRIVATE_KEY],  // Приватный ключ из .env файла
     }
   }
 };
